@@ -1,0 +1,34 @@
+POST http://localhost:8000/register HTTP/1.1
+content-Type: application/json
+
+{
+    "name": "taha",
+    "email": "[EMAIL_ADDRESS1]",
+    "username": "tahahkhan1",
+    "password": "[PASSWORD]"
+}
+
+###
+POST http://localhost:8000/login HTTP/1.1
+content-Type: application/json
+
+{
+    "email": "[EMAIL_ADDRESS]",
+    "password": "[PASSWORD]"
+}
+
+###
+GET http://localhost:8000/get_user_and_profile
+Content-Type: application/json
+
+{
+    "token": "be10d16e8e643179d9c9065933f895cb72a0b4865bf00b0195046491d05977ad"
+}
+
+
+###
+GET http://localhost:8000/users/download_resume?id=6a8494559d00e4bce6080612
+
+
+###
+GET http://localhost:8000/getAllPosts

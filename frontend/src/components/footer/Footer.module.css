@@ -1,0 +1,218 @@
+/* Footer.module.css - White & Golden Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --gold-lightest: #fffdf5;
+  --gold-cream: #fbf5e6;
+  --gold-champagne: #f4e7c5;
+  --gold-bright: #fae17d;
+  --gold-primary: #d4af37;
+  --gold-medium: #c9961a;
+  --gold-dark: #b8860b;
+  --gold-deeper: #8c6010;
+
+  --grad-liquid-gold: url('/images/golden-area.png') center/cover no-repeat;
+  --grad-pearl-footer: linear-gradient(180deg, #ffffff 0%, #fdfcf7 40%, #f8f3e8 100%);
+  --grad-gold-text: linear-gradient(135deg, #2a2217 0%, #7c5c16 45%, #c9961a 80%, #d4af37 100%);
+
+  --text-dark: #1e1914;
+  --text-muted: #6b6152;
+}
+
+.footerWrapper {
+  width: 100%;
+  background: var(--grad-pearl-footer);
+  border-top: 1.5px solid rgba(212, 175, 55, 0.28);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-dark);
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Subtle Ambient Gold Glow at bottom */
+.footerWrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footerContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 2rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 320px;
+}
+
+.brandLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  transition: transform 0.2s ease;
+}
+
+.brandLogo:hover {
+  transform: scale(1.02);
+}
+
+.brandText {
+  background: var(--grad-gold-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.brandInBox {
+  background: var(--grad-liquid-gold);
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 800;
+  padding: 1px 7px 3px 7px;
+  border-radius: 5px;
+  margin-left: 3px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(184, 134, 11, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.brandTagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.goldBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--gold-cream);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 0.35rem 0.85rem;
+  border-radius: 16px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+
+.colTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footerLink {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--gold-dark);
+  transform: translateX(2px);
+}
+
+.bottomDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.35) 50%, transparent 100%);
+  margin-bottom: 1.75rem;
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.bottomLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #9c9180;
+  font-weight: 500;
+}
+
+@media (max-width: 868px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .brandCol {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .brandCol {
+    grid-column: span 1;
+  }
+  .bottomRow {
+    flex-direction: column;
+    text-align: center;
+  }
+}
